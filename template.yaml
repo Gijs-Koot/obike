@@ -1,0 +1,28 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  ovfiets
+Resources:
+  GetBikeData:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: obike
+      Handler: getdata.lambda_handler
+      Runtime: python3.8
+      Environment:
+        Variables:
+          BUCKETNAME: !Ref BikeDataBucket
+      Policies:
+        - S3WritePolicy:
+            BucketName: !Ref BikeDataBucket
+      Events:
+        BikeDataSchedule:
+          Type: Schedule
+          Properties:
+            Schedule: 'rate(10 minutes)'
+  BikeDataBucket:
+    Type: AWS::S3::Bucket
+Outputs:
+  BikeDataBucket:
+    Description: "Where the data is stored"
+    Value: !GetAtt BikeDataBucket.Arn

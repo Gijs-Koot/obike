@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "obike"
+version = "0.1.0"
+description = ""
+authors = ["Gijs Koot <g.koot@octo.nu>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+requests = "^2.26.0"
+boto3 = "^1.19.2"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

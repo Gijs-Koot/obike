@@ -1,0 +1,10 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "obike"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-ouhr4m0syub6"
+s3_prefix = "obike"
+region = "eu-central-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"

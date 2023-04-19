@@ -1,0 +1,8 @@
+* OV fiets
+
+** DONE create lambda function that saves ovfiets data to bucket
+   CLOSED: [2021-10-23 za 16:02]
+
+   - [x] check print statement
+   - [x] add s3 write policy
+   - .5 * 12 = 6mb / h = 200mb / d
